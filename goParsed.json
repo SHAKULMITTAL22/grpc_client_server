@@ -1,0 +1,1711 @@
+{
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/api/api.pb.go": {
+    "function_dict": {
+      "Check": {
+        "code": "func (c *healthClient) Check(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error) {\n\tout := new(HealthCheckResponse)\n\terr := c.cc.Invoke(ctx, \"/api.Health/Check\", in, out, opts...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn out, nil\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "context.Context",
+          "HealthCheckRequest",
+          "UnimplementedHealthServer",
+          "HealthCheckResponse",
+          "error"
+        ],
+        "associated_func": [
+          "new",
+          "status.Errorf"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "Descriptor": {
+        "code": "func (*InputRequest) Descriptor() ([]byte, []int) {\n\treturn fileDescriptor_00212fb1f9d3bf1c, []int{0}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse",
+          "byte",
+          "int"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "EnumDescriptor": {
+        "code": "func (HealthCheckResponse_ServingStatus) EnumDescriptor() ([]byte, []int) {\n\treturn fileDescriptor_00212fb1f9d3bf1c, []int{3, 0}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse_ServingStatus",
+          "byte",
+          "int"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "GetClientName": {
+        "code": "func (m *InputRequest) GetClientName() string {\n\tif m != nil {\n\t\treturn m.ClientName\n\t}\n\treturn \"\"\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "InputRequest",
+          "string"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "GetServerName": {
+        "code": "func (m *OutputResponse) GetServerName() string {\n\tif m != nil {\n\t\treturn m.ServerName\n\t}\n\treturn \"\"\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "OutputResponse",
+          "string"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "GetService": {
+        "code": "func (m *HealthCheckRequest) GetService() string {\n\tif m != nil {\n\t\treturn m.Service\n\t}\n\treturn \"\"\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckRequest",
+          "string"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "GetStatus": {
+        "code": "func (m *HealthCheckResponse) GetStatus() HealthCheckResponse_ServingStatus {\n\tif m != nil {\n\t\treturn m.Status\n\t}\n\treturn HealthCheckResponse_UNKNOWN\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse",
+          "HealthCheckResponse_ServingStatus"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "GetText": {
+        "code": "func (m *InputRequest) GetText() string {\n\tif m != nil {\n\t\treturn m.Text\n\t}\n\treturn \"\"\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "OutputResponse",
+          "string"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "NewHealthClient": {
+        "code": "func NewHealthClient(cc grpc.ClientConnInterface) HealthClient {\n\treturn &healthClient{cc}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "grpc.ClientConnInterface",
+          "HealthClient"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "NewProcessTextClient": {
+        "code": "func NewProcessTextClient(cc grpc.ClientConnInterface) ProcessTextClient {\n\treturn &processTextClient{cc}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "grpc.ClientConnInterface",
+          "ProcessTextClient"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "ProtoMessage": {
+        "code": "func (*InputRequest) ProtoMessage() {\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "public"
+      },
+      "RegisterHealthServer": {
+        "code": "func RegisterHealthServer(s *grpc.Server, srv HealthServer) {\n\ts.RegisterService(&_Health_serviceDesc, srv)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "grpc.Server",
+          "HealthServer"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "RegisterProcessTextServer": {
+        "code": "func RegisterProcessTextServer(s *grpc.Server, srv ProcessTextServer) {\n\ts.RegisterService(&_ProcessText_serviceDesc, srv)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "grpc.Server",
+          "ProcessTextServer"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "Reset": {
+        "code": "func (m *InputRequest) Reset() {\n\t*m = InputRequest{}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "public"
+      },
+      "String": {
+        "code": "func (x HealthCheckResponse_ServingStatus) String() string {\n\treturn proto.EnumName(HealthCheckResponse_ServingStatus_name, int32(x))\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse",
+          "string"
+        ],
+        "associated_func": [
+          "proto.EnumName",
+          "int32",
+          "proto.CompactTextString",
+          "proto.CompactTextString",
+          "proto.CompactTextString",
+          "proto.CompactTextString"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "Upper": {
+        "code": "func (c *processTextClient) Upper(ctx context.Context, in *InputRequest, opts ...grpc.CallOption) (*OutputResponse, error) {\n\tout := new(OutputResponse)\n\terr := c.cc.Invoke(ctx, \"/api.ProcessText/upper\", in, out, opts...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn out, nil\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "context.Context",
+          "InputRequest",
+          "UnimplementedProcessTextServer",
+          "OutputResponse",
+          "error"
+        ],
+        "associated_func": [
+          "new",
+          "status.Errorf"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "Watch": {
+        "code": "func (c *healthClient) Watch(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error) {\n\tout := new(HealthCheckResponse)\n\terr := c.cc.Invoke(ctx, \"/api.Health/Watch\", in, out, opts...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn out, nil\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "context.Context",
+          "HealthCheckRequest",
+          "UnimplementedHealthServer",
+          "HealthCheckResponse",
+          "error"
+        ],
+        "associated_func": [
+          "new",
+          "status.Errorf"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "XXX_DiscardUnknown": {
+        "code": "func (m *InputRequest) XXX_DiscardUnknown() {\n\txxx_messageInfo_InputRequest.DiscardUnknown(m)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "public"
+      },
+      "XXX_Marshal": {
+        "code": "func (m *InputRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {\n\treturn xxx_messageInfo_InputRequest.Marshal(b, m, deterministic)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "byte",
+          "bool",
+          "HealthCheckResponse",
+          "byte",
+          "error"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "XXX_Merge": {
+        "code": "func (m *InputRequest) XXX_Merge(src proto.Message) {\n\txxx_messageInfo_InputRequest.Merge(m, src)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "proto.Message",
+          "HealthCheckResponse"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "public"
+      },
+      "XXX_Size": {
+        "code": "func (m *InputRequest) XXX_Size() int {\n\treturn xxx_messageInfo_InputRequest.Size(m)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "HealthCheckResponse",
+          "int"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "XXX_Unmarshal": {
+        "code": "func (m *InputRequest) XXX_Unmarshal(b []byte) error {\n\treturn xxx_messageInfo_InputRequest.Unmarshal(m, b)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "byte",
+          "HealthCheckResponse",
+          "error"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "_Health_Check_Handler": {
+        "code": "func _Health_Check_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {\n\tin := new(HealthCheckRequest)\n\tif err := dec(in); err != nil {\n\t\treturn nil, err\n\t}\n\tif interceptor == nil {\n\t\treturn srv.(HealthServer).Check(ctx, in)\n\t}\n\tinfo := &grpc.UnaryServerInfo{Server: srv, FullMethod: \"/api.Health/Check\"}\n\thandler := func(ctx context.Context, req interface{}) (interface{}, error) {\n\t\treturn srv.(HealthServer).Check(ctx, req.(*HealthCheckRequest))\n\t}\n\treturn interceptor(ctx, in, info, handler)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "15168.0xc000317050.false",
+          "context.Context",
+          "func([15211.0xc0003170b0.false]) ([error])",
+          "grpc.UnaryServerInterceptor",
+          "15273.0xc000317170.false",
+          "error"
+        ],
+        "associated_func": [
+          "new",
+          "dec",
+          "interceptor"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "private"
+      },
+      "_Health_Watch_Handler": {
+        "code": "func _Health_Watch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {\n\tin := new(HealthCheckRequest)\n\tif err := dec(in); err != nil {\n\t\treturn nil, err\n\t}\n\tif interceptor == nil {\n\t\treturn srv.(HealthServer).Watch(ctx, in)\n\t}\n\tinfo := &grpc.UnaryServerInfo{Server: srv, FullMethod: \"/api.Health/Watch\"}\n\thandler := func(ctx context.Context, req interface{}) (interface{}, error) {\n\t\treturn srv.(HealthServer).Watch(ctx, req.(*HealthCheckRequest))\n\t}\n\treturn interceptor(ctx, in, info, handler)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "15765.0xc000317560.false",
+          "context.Context",
+          "func([15808.0xc0003175c0.false]) ([error])",
+          "grpc.UnaryServerInterceptor",
+          "15870.0xc000317680.false",
+          "error"
+        ],
+        "associated_func": [
+          "new",
+          "dec",
+          "interceptor"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "private"
+      },
+      "_ProcessText_Upper_Handler": {
+        "code": "func _ProcessText_Upper_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {\n\tin := new(InputRequest)\n\tif err := dec(in); err != nil {\n\t\treturn nil, err\n\t}\n\tif interceptor == nil {\n\t\treturn srv.(ProcessTextServer).Upper(ctx, in)\n\t}\n\tinfo := &grpc.UnaryServerInfo{Server: srv, FullMethod: \"/api.ProcessText/Upper\"}\n\thandler := func(ctx context.Context, req interface{}) (interface{}, error) {\n\t\treturn srv.(ProcessTextServer).Upper(ctx, req.(*InputRequest))\n\t}\n\treturn interceptor(ctx, in, info, handler)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "12221.0xc000691dd0.false",
+          "context.Context",
+          "func([12264.0xc000691e30.false]) ([error])",
+          "grpc.UnaryServerInterceptor",
+          "12326.0xc000691ef0.false",
+          "error"
+        ],
+        "associated_func": [
+          "new",
+          "dec",
+          "interceptor"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "private"
+      },
+      "dec": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "init": {
+        "code": "func init() {\n\tproto.RegisterEnum(\"api.HealthCheckResponse_ServingStatus\", HealthCheckResponse_ServingStatus_name, HealthCheckResponse_ServingStatus_value)\n\tproto.RegisterType((*InputRequest)(nil), \"api.InputRequest\")\n\tproto.RegisterType((*OutputResponse)(nil), \"api.OutputResponse\")\n\tproto.RegisterType((*HealthCheckRequest)(nil), \"api.HealthCheckRequest\")\n\tproto.RegisterType((*HealthCheckResponse)(nil), \"api.HealthCheckResponse\")\n}",
+        "is_file_function": true,
+        "associated_struct": null,
+        "associated_func": [
+          "proto.RegisterEnum",
+          "proto.RegisterType",
+          "proto.RegisterType",
+          "proto.RegisterType",
+          "proto.RegisterType",
+          "proto.RegisterFile"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "private"
+      },
+      "int32": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "interceptor": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "new": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "proto.CompactTextString": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "proto.EnumName": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "proto.RegisterEnum": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "proto.RegisterFile": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "proto.RegisterType": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "s.RegisterService": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "status.Errorf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckRequest.DiscardUnknown": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckRequest.Marshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckRequest.Merge": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckRequest.Size": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckRequest.Unmarshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckResponse.DiscardUnknown": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckResponse.Marshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckResponse.Merge": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckResponse.Size": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_HealthCheckResponse.Unmarshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_InputRequest.DiscardUnknown": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_InputRequest.Marshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_InputRequest.Merge": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_InputRequest.Size": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_InputRequest.Unmarshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_OutputResponse.DiscardUnknown": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_OutputResponse.Marshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_OutputResponse.Merge": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_OutputResponse.Size": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "xxx_messageInfo_OutputResponse.Unmarshal": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {
+      "12221.0xc000691dd0.false": "",
+      "12326.0xc000691ef0.false": "",
+      "15168.0xc000317050.false": "",
+      "15273.0xc000317170.false": "",
+      "15765.0xc000317560.false": "",
+      "15870.0xc000317680.false": "",
+      "HealthCheckRequest": "type HealthCheckRequest struct {\n\tService\t\t\tstring\t\t`protobuf:\"bytes,1,opt,name=service,proto3\" json:\"service,omitempty\"`\n\tXXX_NoUnkeyedLiteral\tstruct{}\t`json:\"-\"`\n\tXXX_unrecognized\t[]byte\t\t`json:\"-\"`\n\tXXX_sizecache\t\tint32\t\t`json:\"-\"`\n}",
+      "HealthCheckResponse": "type HealthCheckResponse struct {\n\tStatus\t\t\tHealthCheckResponse_ServingStatus\t`protobuf:\"varint,1,opt,name=status,proto3,enum=api.HealthCheckResponse_ServingStatus\" json:\"status,omitempty\"`\n\tXXX_NoUnkeyedLiteral\tstruct{}\t\t\t\t`json:\"-\"`\n\tXXX_unrecognized\t[]byte\t\t\t\t\t`json:\"-\"`\n\tXXX_sizecache\t\tint32\t\t\t\t\t`json:\"-\"`\n}",
+      "HealthCheckResponse_ServingStatus": "type HealthCheckResponse_ServingStatus int32",
+      "HealthClient": "type HealthClient interface {\n\tCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error)\n\tWatch(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error)\n}",
+      "HealthServer": "type HealthServer interface {\n\tCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error)\n\tWatch(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error)\n}",
+      "InputRequest": "type InputRequest struct {\n\tText\t\t\tstring\t\t`protobuf:\"bytes,1,opt,name=text,proto3\" json:\"text,omitempty\"`\n\tClientName\t\tstring\t\t`protobuf:\"bytes,2,opt,name=clientName,proto3\" json:\"clientName,omitempty\"`\n\tXXX_NoUnkeyedLiteral\tstruct{}\t`json:\"-\"`\n\tXXX_unrecognized\t[]byte\t\t`json:\"-\"`\n\tXXX_sizecache\t\tint32\t\t`json:\"-\"`\n}",
+      "OutputResponse": "type OutputResponse struct {\n\tText\t\t\tstring\t\t`protobuf:\"bytes,1,opt,name=text,proto3\" json:\"text,omitempty\"`\n\tServerName\t\tstring\t\t`protobuf:\"bytes,2,opt,name=serverName,proto3\" json:\"serverName,omitempty\"`\n\tXXX_NoUnkeyedLiteral\tstruct{}\t`json:\"-\"`\n\tXXX_unrecognized\t[]byte\t\t`json:\"-\"`\n\tXXX_sizecache\t\tint32\t\t`json:\"-\"`\n}",
+      "ProcessTextClient": "type ProcessTextClient interface {\n\tUpper(ctx context.Context, in *InputRequest, opts ...grpc.CallOption) (*OutputResponse, error)\n}",
+      "ProcessTextServer": "type ProcessTextServer interface {\n\tUpper(context.Context, *InputRequest) (*OutputResponse, error)\n}",
+      "UnimplementedHealthServer": "type UnimplementedHealthServer struct{}",
+      "UnimplementedProcessTextServer": "type UnimplementedProcessTextServer struct{}",
+      "bool": "",
+      "byte": "",
+      "context.Context": "",
+      "error": "",
+      "func([12264.0xc000691e30.false]) ([error])": "",
+      "func([15211.0xc0003170b0.false]) ([error])": "",
+      "func([15808.0xc0003175c0.false]) ([error])": "",
+      "grpc.ClientConnInterface": "",
+      "grpc.Server": "",
+      "grpc.UnaryServerInterceptor": "",
+      "healthClient": "type healthClient struct{ cc grpc.ClientConnInterface }",
+      "int": "",
+      "processTextClient": "type processTextClient struct{ cc grpc.ClientConnInterface }",
+      "proto.Message": "",
+      "string": ""
+    },
+    "package_dict": {
+      "codes": "google.golang.org/grpc/codes",
+      "grpc": "google.golang.org/grpc",
+      "proto": "github.com/golang/protobuf/proto",
+      "status": "google.golang.org/grpc/status"
+    },
+    "package_name": "api",
+    "imports": "import (\n\tcontext \"context\"\n\tfmt \"fmt\"\n\tproto \"github.com/golang/protobuf/proto\"\n\tgrpc \"google.golang.org/grpc\"\n\tcodes \"google.golang.org/grpc/codes\"\n\tstatus \"google.golang.org/grpc/status\"\n\tmath \"math\"\n)\n"
+  },
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/client-grpc/main.go": {
+    "function_dict": {
+      "api.NewProcessTextClient": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "client.Upper": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "conn.Close": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "context.Background": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "flag.Parse": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "flag.String": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "fmt.Sprintf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "grpc.Dial": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "grpc.WithInsecure": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Fatalf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Printf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Println": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "main": {
+        "code": "func main() {\n\tipPtr := flag.String(\"ip\", \"127.0.0.1:3000\", \"Description: ip address\")\n\tflag.Parse()\n\tconn, err := grpc.Dial(*ipPtr, grpc.WithInsecure())\n\tif err != nil {\n\t\tlog.Fatalf(\"❌ Error connecting to server %s. %v\", *ipPtr, err)\n\t}\n\tlog.Println(\"🚀 Launching client...\")\n\tdefer conn.Close()\n\tclient := api.NewProcessTextClient(conn)\n\trandomClientName := strconv.Itoa(seededRand.Intn(10000))\n\tlog.Printf(\"💡 Client's name is %s\", randomClientName)\n\tzbConfig := zbutil.Config(randomClientName)\n\tzbutil.InitZBIO(zbConfig)\n\tmessage := zb.Message{TopicName: zbutil.TopicName, Data: []byte(fmt.Sprintf(\"grpc-client starting from grpcExample. zbClientName: %s\\n\", randomClientName)), HintPartition: \"\"}\n\tzbutil.SendMessageToZBIO([]zb.Message{message})\n\tfor {\n\t\tvar message zb.Message\n\t\trandomMessage := randomString(10)\n\t\tctx := context.Background()\n\t\treqMessage := &api.InputRequest{Text: randomMessage, ClientName: randomClientName}\n\t\trequestLog := fmt.Sprintf(\"⬅️ Client sent a message to server : %s\", randomMessage)\n\t\tlog.Println(requestLog)\n\t\tmessage = zb.Message{TopicName: zbutil.TopicName, Data: []byte(requestLog), HintPartition: \"\"}\n\t\tzbutil.SendMessageToZBIO([]zb.Message{message})\n\t\tresp, err := client.Upper(ctx, reqMessage)\n\t\tif err != nil {\n\t\t\tlog.Printf(\"❌ Error doing upper : %v\", err)\n\t\t}\n\t\tresponseLog := fmt.Sprintf(\"➡️ Received Response from server %v : %s \", resp.GetServerName(), resp.Text)\n\t\tlog.Printf(responseLog)\n\t\tmessage = zb.Message{TopicName: zbutil.TopicName, Data: []byte(responseLog), HintPartition: \"\"}\n\t\tzbutil.SendMessageToZBIO([]zb.Message{message})\n\t\ttime.Sleep(2 * time.Second)\n\t}\n}",
+        "is_file_function": true,
+        "associated_struct": null,
+        "associated_func": [
+          "grpc.Dial",
+          "grpc.WithInsecure",
+          "api.NewProcessTextClient",
+          "zbutil.Config",
+          "zbutil.InitZBIO",
+          "zbutil.SendMessageToZBIO",
+          "randomString",
+          "zbutil.SendMessageToZBIO",
+          "zbutil.SendMessageToZBIO"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "private"
+      },
+      "randomString": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "resp.GetServerName": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "seededRand.Intn": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "strconv.Itoa": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "time.Sleep": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbutil.Config": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbutil.InitZBIO": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbutil.SendMessageToZBIO": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {},
+    "package_dict": {
+      "api": "github.com/roost-io/roost-example-latest/grpcExample/api",
+      "grpc": "google.golang.org/grpc",
+      "zb": "github.com/ZB-io/zbio/client",
+      "zbutil": "github.com/roost-io/roost-example-latest/grpcExample/message"
+    },
+    "package_name": "main",
+    "imports": "import (\n\t\"context\"\n\t\"flag\"\n\t\"fmt\"\n\t\"log\"\n\t\"strconv\"\n\t\"time\"\n\t\"github.com/roost-io/roost-example-latest/grpcExample/api\"\n\tzb \"github.com/ZB-io/zbio/client\"\n\tzbutil \"github.com/roost-io/roost-example-latest/grpcExample/message\"\n\t\"google.golang.org/grpc\"\n)\n"
+  },
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/client-grpc/random.go": {
+    "function_dict": {
+      "byte": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "make": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "randomString": {
+        "code": "func randomString(length int) string {\n\tx := make([]byte, length)\n\tfor i := 0; i < length; i++ {\n\t\tx[i] = byte(97 + seededRand.Intn(25))\n\t}\n\treturn string(x)\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "int",
+          "string"
+        ],
+        "associated_func": [
+          "make",
+          "byte",
+          "string"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "private"
+      },
+      "seededRand.Intn": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "string": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {
+      "int": "",
+      "string": ""
+    },
+    "package_dict": {},
+    "package_name": "main",
+    "imports": "import (\n\t\"math/rand\"\n\t\"time\"\n)\n"
+  },
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/message/zbio.go": {
+    "function_dict": {
+      "Config": {
+        "code": "func Config(name string) zb.Config {\n\tif zbsvc := os.Getenv(\"SERVICE_ADDRESS\"); zbsvc != \"\" {\n\t\tzbserviceEndpoint = zbsvc\n\t}\n\treturn zb.Config{Name: name, ServiceEndPoint: zbserviceEndpoint}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "string",
+          "zb.Config"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "GetZBClient": {
+        "code": "func GetZBClient(cfg zb.Config) (*zb.Client, error) {\n\tvar err error\n\tif zbclient == nil && zbioEnabled {\n\t\tzbclient, err = zb.New(cfg)\n\t\tif err != nil {\n\t\t\tlog.Printf(\"failed getting zbio client, error: %+v\", err)\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn zbclient, nil\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "zb.Config",
+          "zb.Client",
+          "error"
+        ],
+        "associated_func": [
+          "zb.New"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "InitZBIO": {
+        "code": "func InitZBIO(cfg zb.Config) {\n\tzbclient, _ := GetZBClient(cfg)\n\tif zbclient != nil {\n\t\ttopicCreated, err := zbclient.CreateTopic(TopicName, \"\", int32(1), int32(0), int32(10000))\n\t\tif err != nil {\n\t\t\tlog.Printf(\"failed to create topic, error: %v\", err)\n\t\t}\n\t\tlog.Printf(\"create topic status: %s : %v\", TopicName, topicCreated)\n\t}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "zb.Config"
+        ],
+        "associated_func": [
+          "GetZBClient",
+          "int32",
+          "int32",
+          "int32"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "public"
+      },
+      "SendMessageToZBIO": {
+        "code": "func SendMessageToZBIO(messages []zb.Message) {\n\tif !zbioEnabled {\n\t\treturn\n\t}\n\tvar topicFound = true\n\tif topicFound {\n\t\tnewMessageStatus, err := zbclient.NewMessage(messages)\n\t\tif err != nil {\n\t\t\tlog.Printf(\"failed to write message to zbio, error: %v\", err)\n\t\t}\n\t\tfor resp, status := range newMessageStatus {\n\t\t\tlog.Printf(\"messages sent to zbio status? TopicName: %s\\t Status: %s\", resp, status)\n\t\t}\n\t}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "zb.Message"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "public"
+      },
+      "int32": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Printf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "os.Getenv": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zb.New": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbclient.CreateTopic": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbclient.NewMessage": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {
+      "error": "",
+      "string": "",
+      "zb.Client": "",
+      "zb.Config": "",
+      "zb.Message": ""
+    },
+    "package_dict": {
+      "zb": "github.com/ZB-io/zbio/client"
+    },
+    "package_name": "message",
+    "imports": "import (\n\t\"log\"\n\t\"os\"\n\tzb \"github.com/ZB-io/zbio/client\"\n)\n"
+  },
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/server-grpc/db.go": {
+    "function_dict": {
+      "connectDB": {
+        "code": "func connectDB() error {\n\tsleepTime := 30\n\tlog.Println(\"⏳ Connecting to the dummy database. This might take up to\", sleepTime, \"seconds\")\n\ttime.Sleep(time.Duration(sleepTime) * time.Second)\n\tlog.Println(\"📣 Database is ready now!\")\n\tisDatabaseReady = true\n\treturn nil\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "error"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "private"
+      },
+      "log.Println": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "time.Duration": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "time.Sleep": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {
+      "error": ""
+    },
+    "package_dict": {},
+    "package_name": "main",
+    "imports": "import (\n\t\"log\"\n\t\"time\"\n)\n"
+  },
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/server-grpc/main.go": {
+    "function_dict": {
+      "connectDB": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Println": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "main": {
+        "code": "func main() {\n\tlog.Println(\"🚀 Launching server...\")\n\tgo connectDB()\n\tstartGrpcServer()\n}",
+        "is_file_function": true,
+        "associated_struct": null,
+        "associated_func": [
+          "connectDB",
+          "startGrpcServer"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "private"
+      },
+      "startGrpcServer": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {},
+    "package_dict": {},
+    "package_name": "main",
+    "imports": "import (\n\t\"log\"\n)\n"
+  },
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/server-grpc/server.go": {
+    "function_dict": {
+      "Check": {
+        "code": "func (h *Health) Check(ctx context.Context, req *grpc_health_v1.HealthCheckRequest) (*grpc_health_v1.HealthCheckResponse, error) {\n\tlog.Println(\"🏥 K8s is health checking\")\n\tif isDatabaseReady == true {\n\t\tlog.Printf(\"✅ Server's status is %s\", grpc_health_v1.HealthCheckResponse_SERVING)\n\t\treturn &grpc_health_v1.HealthCheckResponse{Status: grpc_health_v1.HealthCheckResponse_SERVING}, nil\n\t} else if isDatabaseReady == false {\n\t\tlog.Printf(\"🚫 Server's status is %s\", grpc_health_v1.HealthCheckResponse_NOT_SERVING)\n\t\treturn &grpc_health_v1.HealthCheckResponse{Status: grpc_health_v1.HealthCheckResponse_NOT_SERVING}, nil\n\t} else {\n\t\tlog.Printf(\"🚫 Server's status is %s\", grpc_health_v1.HealthCheckResponse_UNKNOWN)\n\t\treturn &grpc_health_v1.HealthCheckResponse{Status: grpc_health_v1.HealthCheckResponse_UNKNOWN}, nil\n\t}\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "context.Context",
+          "grpc_health_v1.HealthCheckRequest",
+          "Health",
+          "grpc_health_v1.HealthCheckResponse",
+          "error"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "Upper": {
+        "code": "func (s server) Upper(c context.Context, req *api.InputRequest) (*api.OutputResponse, error) {\n\treqAck := fmt.Sprintf(\"➡️ Received message from client %v: %v \", req.GetClientName(), req.GetText())\n\tlog.Printf(reqAck)\n\tmessage := zb.Message{TopicName: zbutil.TopicName, Data: []byte(reqAck), HintPartition: \"\"}\n\tzbutil.SendMessageToZBIO([]zb.Message{message})\n\tx := happyUpper(req.GetText())\n\treturn &api.OutputResponse{ServerName: serverName, Text: x}, nil\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "context.Context",
+          "api.InputRequest",
+          "server",
+          "api.OutputResponse",
+          "error"
+        ],
+        "associated_func": [
+          "zbutil.SendMessageToZBIO",
+          "happyUpper"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "Watch": {
+        "code": "func (h *Health) Watch(req *grpc_health_v1.HealthCheckRequest, w grpc_health_v1.Health_WatchServer) error {\n\treturn status.Error(codes.Unimplemented, \"Watching is not supported\")\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "grpc_health_v1.HealthCheckRequest",
+          "grpc_health_v1.Health_WatchServer",
+          "Health",
+          "error"
+        ],
+        "associated_func": [
+          "status.Error"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": true,
+        "access_modifier": "public"
+      },
+      "api.RegisterProcessTextServer": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "fmt.Sprintf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "grpc.NewServer": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "grpcServer.Serve": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "grpc_health_v1.RegisterHealthServer": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "happyUpper": {
+        "code": "func happyUpper(s string) string {\n\treturn strings.ToUpper(s) + \"😊\"\n}",
+        "is_file_function": true,
+        "associated_struct": [
+          "string",
+          "string"
+        ],
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": true,
+        "test_functions": {
+          "/var/tmp/Roost/RoostGPT/grpc-different-repo/1732975531/source/grpc_client_server/server-grpc/server_test.go": {
+            "TestHappyUpper": {
+              "code": "func TestHappyUpper(t *testing.T) {\n\tvar testCases = []struct {\n\t\tinput\tstring\n\t\twant\tstring\n\t}{{\"low\", \"LOW😊\"}, {\"l\", \"L😊\"}, {\"1234\", \"1234😊\"}, {\"\", \"😊\"}}\n\tfor _, tc := range testCases {\n\t\thave := happyUpper(tc.input)\n\t\tif have != tc.want {\n\t\t\tt.Errorf(\"Error. Want %s have %s\", tc.want, have)\n\t\t}\n\t}\n}",
+              "is_file_function": false,
+              "associated_struct": null,
+              "associated_func": [
+                "happyUpper",
+                "t.Errorf"
+              ],
+              "dependent_files": null,
+              "test_exists": false,
+              "test_functions": null,
+              "requires_test": false,
+              "access_modifier": ""
+            }
+          }
+        },
+        "requires_test": true,
+        "access_modifier": "private"
+      },
+      "log.Fatalf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Printf": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "log.Println": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "net.Listen": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "reflection.Register": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "req.GetClientName": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "req.GetText": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "startGrpcServer": {
+        "code": "func startGrpcServer() {\n\tln, err := net.Listen(\"tcp\", port)\n\tif err != nil {\n\t\tlog.Fatalf(\"❌ Error listening to interfaces. %v \", err)\n\t}\n\tlog.Println(\"👂 Server is listening on port\", port)\n\tlog.Printf(\"💡 Server's name is %s\", serverName)\n\tgrpcServer := grpc.NewServer()\n\tsrv := &server{Name: serverName}\n\tzbConfig := zbutil.Config(srv.Name)\n\tzbutil.InitZBIO(zbConfig)\n\tmessage := zb.Message{TopicName: zbutil.TopicName, Data: []byte(fmt.Sprintf(\"Application grpc-server starting. zbClientName: %s\\n\", srv.Name)), HintPartition: \"\"}\n\tzbutil.SendMessageToZBIO([]zb.Message{message})\n\tapi.RegisterProcessTextServer(grpcServer, srv)\n\tgrpc_health_v1.RegisterHealthServer(grpcServer, &Health{})\n\treflection.Register(grpcServer)\n\terr = grpcServer.Serve(ln)\n\tif err != nil {\n\t\tlog.Fatalf(\"❌ Error setting up the server. %v \", err)\n\t}\n}",
+        "is_file_function": true,
+        "associated_struct": null,
+        "associated_func": [
+          "grpc.NewServer",
+          "zbutil.Config",
+          "zbutil.InitZBIO",
+          "zbutil.SendMessageToZBIO",
+          "api.RegisterProcessTextServer",
+          "grpc_health_v1.RegisterHealthServer",
+          "reflection.Register"
+        ],
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": "private"
+      },
+      "status.Error": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "strings.ToUpper": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbutil.Config": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbutil.InitZBIO": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      },
+      "zbutil.SendMessageToZBIO": {
+        "code": "",
+        "is_file_function": false,
+        "associated_struct": null,
+        "associated_func": null,
+        "dependent_files": null,
+        "test_exists": false,
+        "test_functions": {},
+        "requires_test": false,
+        "access_modifier": ""
+      }
+    },
+    "struct_dict": {
+      "Health": "type Health struct{}",
+      "api.InputRequest": "",
+      "api.OutputResponse": "",
+      "context.Context": "",
+      "error": "",
+      "grpc_health_v1.HealthCheckRequest": "",
+      "grpc_health_v1.HealthCheckResponse": "",
+      "grpc_health_v1.Health_WatchServer": "",
+      "server": "type server struct{ Name string }",
+      "string": ""
+    },
+    "package_dict": {
+      "api": "github.com/roost-io/roost-example-latest/grpcExample/api",
+      "codes": "google.golang.org/grpc/codes",
+      "grpc": "google.golang.org/grpc",
+      "grpc_health_v1": "google.golang.org/grpc/health/grpc_health_v1",
+      "reflection": "google.golang.org/grpc/reflection",
+      "status": "google.golang.org/grpc/status",
+      "zb": "github.com/ZB-io/zbio/client",
+      "zbutil": "github.com/roost-io/roost-example-latest/grpcExample/message"
+    },
+    "package_name": "main",
+    "imports": "import (\n\t\"fmt\"\n\t\"log\"\n\t\"net\"\n\t\"github.com/roost-io/roost-example-latest/grpcExample/api\"\n\tzb \"github.com/ZB-io/zbio/client\"\n\tzbutil \"github.com/roost-io/roost-example-latest/grpcExample/message\"\n\t\"context\"\n\t\"strings\"\n\t\"google.golang.org/grpc\"\n\t\"google.golang.org/grpc/codes\"\n\t\"google.golang.org/grpc/health/grpc_health_v1\"\n\t\"google.golang.org/grpc/reflection\"\n\t\"google.golang.org/grpc/status\"\n)\n"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "/var/tmp/Roost/RoostGPT/grpc-different-repo/1733129307/source/grpc_client_server/server-grpc/server310_test.go": {
+    "/var/tmp/Roost/RoostGPT/grpc-different-repo/1733129307/source/grpc_client_server/server-grpc/check_test.go": {
+      "testMethodHash": "dc591faac7",
+      "roostMethodHash": "ROOST_METHOD_HASH=Check_a316e66539\nROOST_METHOD_SIG_HASH=Check_a316e66539\n\n"
+    },
+    "/var/tmp/Roost/RoostGPT/grpc-different-repo/1733129307/source/grpc_client_server/server-grpc/watch_test.go": {
+      "testMethodHash": "ceac601bdc",
+      "roostMethodHash": "ROOST_METHOD_HASH=Watch_ee291f18f7\nROOST_METHOD_SIG_HASH=Watch_ee291f18f7\n\n"
+    },
+    "/var/tmp/Roost/RoostGPT/grpc-different-repo/1733129307/source/grpc_client_server/server-grpc/upper_test.go": {
+      "testMethodHash": "33f446dcfd",
+      "roostMethodHash": "ROOST_METHOD_HASH=Upper_6c4de803cd\nROOST_METHOD_SIG_HASH=Upper_6c4de803cd\n\n"
+    }
+  }
+}
